@@ -37,3 +37,6 @@ rebuild-docker.sh
 */.run/**
 .run/**
 .run
+docker/tb-node/postgres/
+docker/tb-node/log/
+docker/tb-node/new-log/

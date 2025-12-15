@@ -19,7 +19,7 @@ services:
     restart: always
     image: "bitnamilegacy/kafka:4.0"
     ports:
-      - "9092:9092"
+      - "9093:9092"
     env_file:
       - kafka.env
   tb-js-executor:

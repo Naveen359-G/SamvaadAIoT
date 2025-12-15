@@ -1,0 +1,43 @@
+/**
+ * SamvaadAIoT Custom Theme
+ * Where Devices Converse with Intelligence
+ */
+
+/* Brand Color Variables */
+$samvaad-blue: #0066FF;
+$samvaad-teal: #00D4AA;
+$samvaad-orange: #FF6B35;
+$samvaad-dark: #0A1929;
+$samvaad-light: #F5F7FA;
+
+/* Brand Classes */
+.samvaad-primary-bg {
+  background-color: $samvaad-blue !important;
+}
+
+.samvaad-text-primary {
+  color: $samvaad-blue !important;
+}
+
+.samvaad-text-accent {
+  color: $samvaad-teal !important;
+}
+
+/* Custom link colors */
+a:not(.mat-button):not(.mat-raised-button):not(.mat-flat-button):not(.mdc-tab) {
+  color: $samvaad-teal;
+  
+  &:hover {
+    color: darken($samvaad-teal, 10%);
+  }
+}
+
+/* Dashboard widgets */
+.tb-widget {
+  border-left: 3px solid $samvaad-blue !important;
+}
+
+/* Login page gradient */
+.tb-login {
+  background: linear-gradient(135deg, $samvaad-blue 0%, $samvaad-teal 100%);
+}

@@ -32,7 +32,6 @@ services:
     env_file:
       - tb-js-executor.env
   tb-core1:
-    container_name: tb-core1-fix
     restart: always
     image: "${DOCKER_REPO}/${TB_NODE_DOCKER_NAME}:${TB_VERSION}"
     ports:
@@ -50,16 +49,15 @@ services:
       JAVA_OPTS: "${JAVA_OPTS}"
     env_file:
       - tb-node.env
-    volumes:
-      - ./tb-node/conf:/config
-      - ./tb-node/new-log:/var/log/thingsboard
+#volumes:
+#      - ./tb-node/conf:/config
+#      - ./tb-node/log:/var/log/thingsboard
     depends_on:
       - zookeeper
       - tb-js-executor
       - tb-rule-engine1
       - tb-rule-engine2
   tb-core2:
-    container_name: tb-core2-fix
     restart: always
     image: "${DOCKER_REPO}/${TB_NODE_DOCKER_NAME}:${TB_VERSION}"
     ports:
@@ -77,9 +75,9 @@ services:
       JAVA_OPTS: "${JAVA_OPTS}"
     env_file:
       - tb-node.env
-    volumes:
-      - ./tb-node/conf:/config
-      - ./tb-node/new-log:/var/log/thingsboard
+#volumes:
+#      - ./tb-node/conf:/config
+#      - ./tb-node/log:/var/log/thingsboard
     depends_on:
       - zookeeper
       - tb-js-executor
@@ -101,9 +99,9 @@ services:
       JAVA_OPTS: "${JAVA_OPTS}"
     env_file:
       - tb-node.env
-    volumes:
-      - ./tb-node/conf:/config
-      - ./tb-node/new-log:/var/log/thingsboard
+#volumes:
+#      - ./tb-node/conf:/config
+#      - ./tb-node/log:/var/log/thingsboard
     depends_on:
       - zookeeper
       - tb-js-executor
@@ -123,9 +121,9 @@ services:
       JAVA_OPTS: "${JAVA_OPTS}"
     env_file:
       - tb-node.env
-    volumes:
-      - ./tb-node/conf:/config
-      - ./tb-node/new-log:/var/log/thingsboard
+#volumes:
+#      - ./tb-node/conf:/config
+#      - ./tb-node/log:/var/log/thingsboard
     depends_on:
       - zookeeper
       - tb-js-executor
@@ -139,7 +137,7 @@ services:
       JAVA_OPTS: "${JAVA_OPTS}"
     env_file:
       - tb-mqtt-transport.env
-    volumes:
+#volumes:
       - ./tb-transports/mqtt/conf:/config
       - ./tb-transports/mqtt/log:/var/log/tb-mqtt-transport
     depends_on:
@@ -156,7 +154,7 @@ services:
       JAVA_OPTS: "${JAVA_OPTS}"
     env_file:
       - tb-mqtt-transport.env
-    volumes:
+#volumes:
       - ./tb-transports/mqtt/conf:/config
       - ./tb-transports/mqtt/log:/var/log/tb-mqtt-transport
     depends_on:
@@ -173,7 +171,7 @@ services:
       JAVA_OPTS: "${JAVA_OPTS}"
     env_file:
       - tb-http-transport.env
-    volumes:
+#volumes:
       - ./tb-transports/http/conf:/config
       - ./tb-transports/http/log:/var/log/tb-http-transport
     depends_on:
@@ -190,7 +188,7 @@ services:
       JAVA_OPTS: "${JAVA_OPTS}"
     env_file:
       - tb-http-transport.env
-    volumes:
+#volumes:
       - ./tb-transports/http/conf:/config
       - ./tb-transports/http/log:/var/log/tb-http-transport
     depends_on:
@@ -207,7 +205,7 @@ services:
       JAVA_OPTS: "${JAVA_OPTS}"
     env_file:
       - tb-coap-transport.env
-    volumes:
+#volumes:
       - ./tb-transports/coap/conf:/config
       - ./tb-transports/coap/log:/var/log/tb-coap-transport
     depends_on:
@@ -225,7 +223,7 @@ services:
       JAVA_OPTS: "${JAVA_OPTS}"
     env_file:
       - tb-lwm2m-transport.env
-    volumes:
+#volumes:
       - ./tb-transports/lwm2m/conf:/config
       - ./tb-transports/lwm2m/log:/var/log/tb-lwm2m-transport
     depends_on:
@@ -242,7 +240,7 @@ services:
       JAVA_OPTS: "${JAVA_OPTS}"
     env_file:
       - tb-snmp-transport.env
-    volumes:
+#volumes:
       - ./tb-transports/snmp/conf:/config
       - ./tb-transports/snmp/log:/var/log/tb-snmp-transport
     depends_on:
@@ -273,7 +271,7 @@ services:
       JAVA_OPTS: "${JAVA_OPTS}"
     env_file:
       - tb-vc-executor.env
-    volumes:
+#volumes:
       - ./tb-vc-executor/conf:/config
       - ./tb-vc-executor/log:/var/log/tb-vc-executor
     depends_on:
@@ -290,7 +288,7 @@ services:
       JAVA_OPTS: "${JAVA_OPTS}"
     env_file:
       - tb-vc-executor.env
-    volumes:
+#volumes:
       - ./tb-vc-executor/conf:/config
       - ./tb-vc-executor/log:/var/log/tb-vc-executor
     depends_on:
@@ -301,7 +299,7 @@ services:
     restart: always
     container_name: "${LOAD_BALANCER_NAME}"
     image: thingsboard/haproxy-certbot:2.2.33-alpine
-    volumes:
+#volumes:
      - ./haproxy/config:/config
      - ./haproxy/letsencrypt:/etc/letsencrypt
      - ./haproxy/certs.d:/usr/local/etc/haproxy/certs.d

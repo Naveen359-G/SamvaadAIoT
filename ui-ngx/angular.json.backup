@@ -20,22 +20,18 @@
         "build": {
           "builder": "@angular-builders/custom-esbuild:application",
           "options": {
-            "plugins": [
-              "./esbuild/tb-esbuild-plugins.ts"
-            ],
+            "plugins": ["./esbuild/tb-esbuild-plugins.ts"],
             "loader": {
-              ".raw": "text"
+                ".raw": "text"
             },
             "outputPath": {
-              "base": "target/generated-resources/public",
-              "media": ".",
-              "browser": ""
+                "base": "target/generated-resources/public",
+                "media": ".",
+                "browser": ""
             },
             "index": "src/index.html",
             "browser": "src/main.ts",
-            "polyfills": [
-              "src/polyfills.ts"
-            ],
+            "polyfills": ["src/polyfills.ts"],
             "tsConfig": "src/tsconfig.app.json",
             "aot": true,
             "assets": [
@@ -135,10 +131,6 @@
             ],
             "allowedCommonJsDependencies": [
               "*"
-            ],
-            "externalDependencies": [
-              "flot",
-              "flot/**"
             ]
           },
           "configurations": {
@@ -189,9 +181,7 @@
           "options": {
             "buildTarget": "thingsboard:build",
             "proxyConfig": "proxy.conf.js",
-            "middlewares": [
-              "./esbuild/tb-html-fallback-middleware.ts"
-            ]
+            "middlewares": ["./esbuild/tb-html-fallback-middleware.ts"]
           },
           "configurations": {
             "production": {

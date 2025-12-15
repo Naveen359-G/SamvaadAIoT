@@ -141,16 +141,16 @@ export class WidgetComponentService {
         })
       ));
 
-      widgetModulesTasks.push(from(import('flot/jquery.flot.js')).pipe(
+      widgetModulesTasks.push(from(import('flot/src/jquery.flot.js')).pipe(
         mergeMap(() => {
           const flotJsPluginsTasks: Observable<any>[] = [];
-          flotJsPluginsTasks.push(from(import('flot/jquery.colorhelpers.js')));
-          flotJsPluginsTasks.push(from(import('flot/jquery.flot.time.js')));
-          flotJsPluginsTasks.push(from(import('flot/jquery.flot.selection.js')));
-          flotJsPluginsTasks.push(from(import('flot/jquery.flot.pie.js')));
-          flotJsPluginsTasks.push(from(import('flot/jquery.flot.crosshair.js')));
-          flotJsPluginsTasks.push(from(import('flot/jquery.flot.stack.js')));
-          flotJsPluginsTasks.push(from(import('flot/jquery.flot.symbol.js')));
+          flotJsPluginsTasks.push(from(import('flot/lib/jquery.colorhelpers.js')));
+          flotJsPluginsTasks.push(from(import('flot/src/plugins/jquery.flot.time.js')));
+          flotJsPluginsTasks.push(from(import('flot/src/plugins/jquery.flot.selection.js')));
+          flotJsPluginsTasks.push(from(import('flot/src/plugins/jquery.flot.pie.js')));
+          flotJsPluginsTasks.push(from(import('flot/src/plugins/jquery.flot.crosshair.js')));
+          flotJsPluginsTasks.push(from(import('flot/src/plugins/jquery.flot.stack.js')));
+          flotJsPluginsTasks.push(from(import('flot/src/plugins/jquery.flot.symbol.js')));
           flotJsPluginsTasks.push(from(import('flot.curvedlines/curvedLines.js')));
           return forkJoin(flotJsPluginsTasks);
         })
