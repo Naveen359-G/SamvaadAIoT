@@ -95,7 +95,7 @@ public class DefaultMailService implements MailService {
 
     private long timeout;
 
-    @PostConstruct
+    //@PostConstruct
     private void init() {
         updateMailConfiguration();
     }

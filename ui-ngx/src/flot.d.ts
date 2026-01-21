@@ -1,5 +1,5 @@
 // TypeScript declarations for flot library
-declare module 'flot/src/jquery.flot.js' {
+declare module 'flot/lib/jquery.flot.js' {
   const flot: any;
   export default flot;
 }

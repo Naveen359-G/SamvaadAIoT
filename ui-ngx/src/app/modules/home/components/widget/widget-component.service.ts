@@ -141,10 +141,10 @@ export class WidgetComponentService {
         })
       ));
 
-      widgetModulesTasks.push(from(import('flot/jquery.flot.js')).pipe(
+      widgetModulesTasks.push(from(import('flot/lib/jquery.flot.js')).pipe(
         mergeMap(() => {
           const flotJsPluginsTasks: Observable<any>[] = [];
-          flotJsPluginsTasks.push(from(import('flot/jquery.colorhelpers.js')));
+          flotJsPluginsTasks.push(from(import('flot/lib/jquery.colorhelpers.js')));
           flotJsPluginsTasks.push(from(import('flot/jquery.flot.time.js')));
           flotJsPluginsTasks.push(from(import('flot/jquery.flot.selection.js')));
           flotJsPluginsTasks.push(from(import('flot/jquery.flot.pie.js')));

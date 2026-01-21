@@ -137,8 +137,7 @@
               "*"
             ],
             "externalDependencies": [
-              "flot",
-              "flot/**"
+              "flot"
             ]
           },
           "configurations": {
